@@ -77,6 +77,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             this.weaponRotation = 0;
         }
         if (this.weaponRotation > 100 ) {
+            this.destroyStuff();
             this.weaponRotation = 0;
         }
         if (this.flipX) {
@@ -93,11 +94,28 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             objectA:[playerSensor],
             callback: other => {
                 if(other.bodyB.isSensor) return;
-                this.touching.push(other.GameObjectB)
-                console.log(this.touching.length,other.GameObjectB.name);
+                this.touching.push(other.gameObjectB)
+                console.log(this.touching.length,other.gameObjectB.name);
             },
             context: this.scene,
         });
+
+        this.scene.matterCollision.addOnCollideEnd({
+            objectA:[playerSensor],
+            callback: other => {
+                this.touching = this.touching.filter(gameObject => gameObject =! other.gameObjectB );
+                console.log(this.touching.length);
+            },
+            context: this.scene,
+        });
+    }
+
+    destroyStuff() {
+        this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead);
+        this.touching.forEach(gameobject => {
+            gameobject.hit();
+            if (gameobject.dead) gameobject.destroy();
+        })
     }
 
 }
