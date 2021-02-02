@@ -1,12 +1,18 @@
 import player_pic from '../assets/img/player.png';
 import player_json from '../assets/img/player_atlas.json';
 import player_anim from '../assets/img/player_anim.json';
-
+import items from '../assets/img/items.png';
 export default class Player extends Phaser.Physics.Matter.Sprite {
     constructor(data) {
         let {scene,x,y,texture,frame} = data;
         super(scene.matter.world,x,y,texture,frame);
+        this.touching = [];
         this.scene.add.existing(this);  
+        //Weapon
+        this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene,0,0,'items',91);
+        this.spriteWeapon.setScale(0.6);
+        this.spriteWeapon.setOrigin(0.15,0.85);
+        this.scene.add.existing(this.spriteWeapon);
 
         const { Body, Bodies } = Phaser.Physics.Matter.Matter;
         var playerCollider = Bodies.circle(this.x,this.y,12,{isSensor:false,label:'playerCollider'});
@@ -17,11 +23,16 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         })
         this.setExistingBody(compoundBody);
         this.setFixedRotation();
+        //create mining  collisions 
+        this.createMiningCollisions(playerSensor);
+        //flip player when looking other way
+        this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x))
     }
 
     static preload(scene) {
         scene.load.atlas('player',player_pic,player_json);
         scene.load.animation('player_anim',player_anim);
+        scene.load.spritesheet('items',items,{frameWidth:32,frameHeight:32});
     }
 
     get velocity() {
@@ -52,6 +63,41 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         } else {
             this.anims.play('player_idle',true);
         }
+
+        //connect Weapon to Player
+        this.spriteWeapon.setPosition(this.x,this.y);
+        this.weaponRotate();
+    }
+
+    weaponRotate(){
+        let pointer = this.scene.input.activePointer;
+        if (pointer.isDown) {
+            this.weaponRotation += 6;
+        } else {
+            this.weaponRotation = 0;
+        }
+        if (this.weaponRotation > 100 ) {
+            this.weaponRotation = 0;
+        }
+        if (this.flipX) {
+            this.spriteWeapon.setAngle(-this.weaponRotation - 90);
+        } else {
+            this.spriteWeapon.setAngle(this.weaponRotation);
+        }
+        
+    }
+
+
+    createMiningCollisions(playerSensor) {
+        this.scene.matterCollision.addOnCollideStart({
+            objectA:[playerSensor],
+            callback: other => {
+                if(other.bodyB.isSensor) return;
+                this.touching.push(other.GameObjectB)
+                console.log(this.touching.length,other.GameObjectB.name);
+            },
+            context: this.scene,
+        });
     }
 
 }

@@ -29,26 +29,17 @@ export default class mainScene extends Phaser.Scene {
         const layer2 = map.createStaticLayer('Tile Layer 2',tileset,0,0);
         layer1.setCollisionByProperty({collides:true});
         this.matter.world.convertTilemapLayer(layer1);
-
         // map objects
-        
-       this.addResources()
-
+       this.map.getObjectLayer('Resources').objects.forEach(resource => new Resource({scene:this,resource}));
         //add player to scene
         this.player = new Player({scene:this,x:150,y:150,texture:'player',frame:'eliteknight_idle_1'});
+        //player movement
         this.player.inputKeys = this.input.keyboard.addKeys({
             up: Phaser.Input.Keyboard.KeyCodes.W,
             down: Phaser.Input.Keyboard.KeyCodes.S,
             right: Phaser.Input.Keyboard.KeyCodes.D,
             left: Phaser.Input.Keyboard.KeyCodes.A,
         })
-    }
-
-    addResources() {
-        const resources = this.map.getObjectLayer('Resources');
-        resources.objects.forEach(resource => {
-            let resItem = new Resource({scene:this,resource});
-        }) 
     }
 
    update() {
