@@ -6,6 +6,7 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
     static preload(scene) {
         scene.load.atlas('resources',resources_pic,resources_json);
     }
+    
 
     constructor(data) {
         let {scene,resource} = data;
