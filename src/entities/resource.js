@@ -1,10 +1,16 @@
 import resources_pic from '../assets/img/resources.png';
 import resources_json from '../assets/img/resources_atlas.json';
+import rock_sound from '../assets/audio/rock.wav';
+import bush_sound from '../assets/audio/bush.wav';
+import tree_sound from '../assets/audio/tree.wav';
 
 export default class Resource extends Phaser.Physics.Matter.Sprite {
     
     static preload(scene) {
         scene.load.atlas('resources',resources_pic,resources_json);
+        scene.load.audio('tree',tree_sound);
+        scene.load.audio('bush',bush_sound);
+        scene.load.audio('rock',rock_sound);
     }
     
 
@@ -14,6 +20,7 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.scene.add.existing(this);
         this.name = resource.type;
         this.health = 5;
+        this.sound = this.scene.sound.add(this.name);
         let yOrigin = resource.properties.find(p=>p.name == 'yOrigin').value;
         this.x += this.width / 2;
         this.y -= this.height / 2;
