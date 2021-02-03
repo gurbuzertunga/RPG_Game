@@ -7,7 +7,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         let {scene,x,y,texture,frame} = data;
         super(scene.matter.world,x,y,texture,frame);
         this.touching = [];
-        this.scene.add.existing(this);  
+        this.scene.add.existing(this);
         //Weapon
         this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene,0,0,'items',91);
         this.spriteWeapon.setScale(0.6);
@@ -25,6 +25,8 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         this.setFixedRotation();
         //create mining  collisions 
         this.createMiningCollisions(playerSensor);
+        //create pick up collisions
+        this.createPickupCollisions(playerCollider);
         //flip player when looking other way
         this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x))
     }
@@ -105,6 +107,24 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             callback: other => {
                 this.touching = this.touching.filter(gameObject => gameObject =! other.gameObjectB );
                 console.log(this.touching.length);
+            },
+            context: this.scene,
+        });
+    }
+
+    createPickupCollisions(playerCollider) {
+        this.scene.matterCollision.addOnCollideStart({
+            objectA:[playerCollider],
+            callback: other => {
+                if(other.gameObjectB && other.gameObjectB.pickup) other.gameObjectB.pickup();
+            },
+            context: this.scene,
+        });
+
+        this.scene.matterCollision.addOnCollideActive({
+            objectA:[playerCollider],
+            callback: other => {
+                if(other.gameObjectB && other.gameObjectB.pickup) other.gameObjectB.pickup();
             },
             context: this.scene,
         });
