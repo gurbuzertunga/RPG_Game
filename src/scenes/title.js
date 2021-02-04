@@ -14,23 +14,23 @@ export default class Title extends Phaser.Scene {
     }
 
     create() {
-        this.play = this.add.image(150,50,'play').setInteractive();
+        this.play = this.add.image(250,50,'play').setInteractive();
         this.play.on('pointerdown',() => {
             this.scene.start('mainScene');
         })
-        this.options = this.add.image(150,150,'options').setInteractive();
+        this.options = this.add.image(250,150,'options').setInteractive();
         this.options.on('pointerdown',() => {
             this.scene.start('optionsScene');
         })
-        this.help = this.add.image(150,250,'help').setInteractive();
+        this.help = this.add.image(250,250,'help').setInteractive();
         this.help.on('pointerdown',() => {
             this.scene.start('helpScene');
         })
-        this.score = this.add.image(150,350,'score').setInteractive();
+        this.score = this.add.image(250,350,'score').setInteractive();
         this.play.on('pointerdown',() => {
             this.scene.start('scoreScene');
         })
-        this.quit = this.add.image(150,450,'quit').setInteractive();
+        this.quit = this.add.image(250,450,'quit').setInteractive();
         this.quit.on('pointerdown',() => {
             close();
         })

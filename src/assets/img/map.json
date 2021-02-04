@@ -822,6 +822,52 @@
                  "width":32,
                  "x":384,
                  "y":448
+                }, 
+                {
+                 "gid":3,
+                 "height":32,
+                 "id":39,
+                 "name":"troll",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[241,280]"
+                        }, 
+                        {
+                         "name":"health",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":416,
+                 "y":288
+                }, 
+                {
+                 "gid":3,
+                 "height":32,
+                 "id":40,
+                 "name":"ent",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[201,203]"
+                        }, 
+                        {
+                         "name":"health",
+                         "type":"int",
+                         "value":8
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":416,
+                 "y":128
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -830,7 +876,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":39,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",
