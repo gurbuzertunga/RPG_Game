@@ -138,11 +138,9 @@ export default class Player extends MatterEntity {
         this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead);
         this.touching.forEach(gameobject => {
             gameobject.hit();
-            console.log(gameobject);
             if (gameobject.dead){
                 if (gameobject.name == 'troll' || gameobject.name == 'ent' || gameobject.name == 'bandit' ) this.score += 200;
                 if (gameobject.name == 'tree' || gameobject.name == 'bush' || gameobject.name == 'rock' ) this.score += 100;
-                console.log(this.score);
                 gameobject.destroy()
                 };
         })

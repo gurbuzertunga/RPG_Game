@@ -13,6 +13,7 @@ export default class mainScene extends Phaser.Scene {
     constructor() {
         super('mainScene');
         this.enemies = [];
+        
     }
 
     preload() {
@@ -51,5 +52,7 @@ export default class mainScene extends Phaser.Scene {
    update() {
        this.enemies.forEach(enemy => enemy.update());
        this.player.update();
+       this.score = this.add.text(10,470,``);
+       this.score.setText('score:' + this.player.score);
    }
 }

@@ -45,7 +45,6 @@ export default class Enemy extends MatterEntity {
           clearInterval(this.attacktimer);
           return;
         }
-        console.log('player health:' + target.health);
         target.hit();
       }
     
