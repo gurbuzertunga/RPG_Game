@@ -6,13 +6,17 @@ import map_json from '../assets/img/map.json';
 
 import Player from '../entities/player.js';
 import Resource from '../entities/resource.js';
+import Preloader from './preloader.js';
+import Enemy from '../entities/enemy.js';
 
 export default class mainScene extends Phaser.Scene {
     constructor() {
         super('mainScene');
+        this.enemies = [];
     }
 
     preload() {
+       Enemy.preload(this);
        Player.preload(this);
        Resource.preload(this);
        this.load.image('tiles', map_pic);
@@ -29,10 +33,12 @@ export default class mainScene extends Phaser.Scene {
         const layer2 = map.createStaticLayer('Tile Layer 2',tileset,0,0);
         layer1.setCollisionByProperty({collides:true});
         this.matter.world.convertTilemapLayer(layer1);
-        // map objects
+        // map objects Resources
        this.map.getObjectLayer('Resources').objects.forEach(resource => new Resource({scene:this,resource}));
+       //map objects Enemies
+       this.map.getObjectLayer('Enemies').objects.forEach(enemy => this.enemies.push(new Enemy({scene:this,enemy})));
         //add player to scene
-        this.player = new Player({scene:this,x:150,y:150,texture:'player',frame:'eliteknight_idle_1'});
+        this.player = new Player({scene:this,x:250,y:150,texture:'player',frame:'eliteknight_idle_1'});
         //player movement
         this.player.inputKeys = this.input.keyboard.addKeys({
             up: Phaser.Input.Keyboard.KeyCodes.W,
@@ -43,6 +49,7 @@ export default class mainScene extends Phaser.Scene {
     }
 
    update() {
+       this.enemies.forEach(enemy => enemy.update());
        this.player.update();
    }
 }

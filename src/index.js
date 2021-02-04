@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 import mainScene from './scenes/mainScene.js';
+import Preloader from './scenes/preloader.js';
+import Title from './scenes/title.js';
 
 const config = {
     type: Phaser.AUTO,
@@ -8,7 +10,7 @@ const config = {
     width: 512,
     height: 512,
     backgroundColor: '#333333',
-    scene: [mainScene],
+    scene: [Preloader,Title,mainScene],
     scale: {
         zoom:2,
     },
@@ -16,7 +18,7 @@ const config = {
         default: 'matter',
         matter: {
             debug:true,
-            gravity:{x:0,y:0}
+            gravity:{y:0}
         }
     },
     plugins: {

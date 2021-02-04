@@ -2,12 +2,14 @@ import player_pic from '../assets/img/player.png';
 import player_json from '../assets/img/player_atlas.json';
 import player_anim from '../assets/img/player_anim.json';
 import items from '../assets/img/items.png';
-export default class Player extends Phaser.Physics.Matter.Sprite {
+import player_hit from '../assets/audio/player.wav';
+import MatterEntity from './matterEntity.js';
+export default class Player extends MatterEntity {
     constructor(data) {
         let {scene,x,y,texture,frame} = data;
-        super(scene.matter.world,x,y,texture,frame);
+        super({...data,health:2,drops:[],name:'player'});
         this.touching = [];
-        this.scene.add.existing(this);
+        this.score = 0;
         //Weapon
         this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene,0,0,'items',91);
         this.spriteWeapon.setScale(0.6);
@@ -28,21 +30,25 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         //create pick up collisions
         this.createPickupCollisions(playerCollider);
         //flip player when looking other way
-        this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x))
+        this.scene.input.on('pointermove', pointer => { if (!this.dead) this.setFlipX(pointer.worldX < this.x)})
     }
 
     static preload(scene) {
         scene.load.atlas('player',player_pic,player_json);
         scene.load.animation('player_anim',player_anim);
         scene.load.spritesheet('items',items,{frameWidth:32,frameHeight:32});
+        scene.load.audio('player',player_hit);
     }
 
-    get velocity() {
-        return this.body.velocity;
+    onDeath() {
+        this.anims.stop();
+        this.setTexture('items',0);
+        this.setOrigin(0.5);
+        this.spriteWeapon.destroy();
     }
 
     update() {
-     
+        if (this.dead) return;
         const speed = 2.5;
         let playerVelocity = new Phaser.Math.Vector2();
         if (this.inputKeys.left.isDown) {
@@ -97,7 +103,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             callback: other => {
                 if(other.bodyB.isSensor) return;
                 this.touching.push(other.gameObjectB)
-                console.log(this.touching.length,other.gameObjectB.name);
             },
             context: this.scene,
         });
@@ -106,7 +111,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
             objectA:[playerSensor],
             callback: other => {
                 this.touching = this.touching.filter(gameObject => gameObject =! other.gameObjectB );
-                console.log(this.touching.length);
             },
             context: this.scene,
         });
@@ -134,7 +138,13 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead);
         this.touching.forEach(gameobject => {
             gameobject.hit();
-            if (gameobject.dead) gameobject.destroy();
+            console.log(gameobject);
+            if (gameobject.dead){
+                if (gameobject.name == 'troll' || gameobject.name == 'ent' || gameobject.name == 'bandit' ) this.score += 200;
+                if (gameobject.name == 'tree' || gameobject.name == 'bush' || gameobject.name == 'rock' ) this.score += 100;
+                console.log(this.score);
+                gameobject.destroy()
+                };
         })
     }
 

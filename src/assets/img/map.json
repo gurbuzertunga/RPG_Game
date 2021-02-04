@@ -50,6 +50,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -72,6 +77,11 @@
                  "id":5,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -96,6 +106,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[273,273]"
@@ -118,6 +133,11 @@
                  "id":13,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -142,6 +162,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[273,273]"
@@ -164,6 +189,11 @@
                  "id":15,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -188,6 +218,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[273,273]"
@@ -210,6 +245,11 @@
                  "id":17,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -234,6 +274,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -256,6 +301,11 @@
                  "id":19,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -280,6 +330,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[228,228]"
@@ -303,6 +358,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[228,228]"
@@ -325,6 +385,11 @@
                  "id":22,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -349,6 +414,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -371,6 +441,11 @@
                  "id":24,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -395,6 +470,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -417,6 +497,11 @@
                  "id":26,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -441,6 +526,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -463,6 +553,11 @@
                  "id":28,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -487,6 +582,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[228,228]"
@@ -509,6 +609,11 @@
                  "id":30,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -533,6 +638,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[228,228]"
@@ -555,6 +665,11 @@
                  "id":32,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",
@@ -579,6 +694,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -594,6 +714,114 @@
                  "width":32,
                  "x":256,
                  "y":256
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":35,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":256,
+                 "y":192
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"Enemies",
+         "objects":[
+                {
+                 "gid":3,
+                 "height":32,
+                 "id":36,
+                 "name":"troll",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[241,280]"
+                        }, 
+                        {
+                         "name":"health",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":96,
+                 "y":160
+                }, 
+                {
+                 "gid":3,
+                 "height":32,
+                 "id":37,
+                 "name":"ent",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[201,203]"
+                        }, 
+                        {
+                         "name":"health",
+                         "type":"int",
+                         "value":8
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":416
+                }, 
+                {
+                 "gid":3,
+                 "height":32,
+                 "id":38,
+                 "name":"bandit",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[241]"
+                        }, 
+                        {
+                         "name":"health",
+                         "type":"int",
+                         "value":5
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":384,
+                 "y":448
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -601,8 +829,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":35,
+ "nextlayerid":5,
+ "nextobjectid":39,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",
@@ -624,6 +852,11 @@
                  "id":20,
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[272,272]"
@@ -639,6 +872,11 @@
                  "id":21,
                  "properties":[
                         {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"drops",
                          "type":"string",
                          "value":"[228,228]"
@@ -653,6 +891,11 @@
                 {
                  "id":22,
                  "properties":[
+                        {
+                         "name":"depth",
+                         "type":"int",
+                         "value":1
+                        }, 
                         {
                          "name":"drops",
                          "type":"string",

@@ -1,4 +1,3 @@
-import Player from './player.js';
 
 export default class DropItem extends Phaser.Physics.Matter.Sprite {
     constructor(data) {
