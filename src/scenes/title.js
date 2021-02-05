@@ -1,9 +1,3 @@
-import play_img from '../assets/img/play.png';
-import options_img from '../assets/img/options.png';
-import help_img from '../assets/img/help.png';
-import score_img from '../assets/img/score.png';
-import quit_img from '../assets/img/quit.png';
-
 export default class Title extends Phaser.Scene {
     constructor() {
         super('titleScene');
@@ -16,7 +10,7 @@ export default class Title extends Phaser.Scene {
     create() {
         this.play = this.add.image(250,50,'play').setInteractive();
         this.play.on('pointerdown',() => {
-            this.scene.start('mainScene');
+            this.scene.start('getUserName');
         })
         this.options = this.add.image(250,150,'options').setInteractive();
         this.options.on('pointerdown',() => {
@@ -27,8 +21,9 @@ export default class Title extends Phaser.Scene {
             this.scene.start('helpScene');
         })
         this.score = this.add.image(250,350,'score').setInteractive();
-        this.play.on('pointerdown',() => {
-            this.scene.start('scoreScene');
+        this.score.on('pointerdown',() => {
+            console.log('click works on score');
+            this.scene.start('leaderboard');
         })
         this.quit = this.add.image(250,450,'quit').setInteractive();
         this.quit.on('pointerdown',() => {

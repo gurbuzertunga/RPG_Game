@@ -13,7 +13,6 @@ export default class mainScene extends Phaser.Scene {
     constructor() {
         super('mainScene');
         this.enemies = [];
-        
     }
 
     preload() {
@@ -22,7 +21,6 @@ export default class mainScene extends Phaser.Scene {
        Resource.preload(this);
        this.load.image('tiles', map_pic);
        this.load.tilemapTiledJSON('map',map_json);
-       
     }
 
     create() {
@@ -47,12 +45,13 @@ export default class mainScene extends Phaser.Scene {
             right: Phaser.Input.Keyboard.KeyCodes.D,
             left: Phaser.Input.Keyboard.KeyCodes.A,
         })
+        this.score = this.add.text(10,470,``);
     }
 
    update() {
        this.enemies.forEach(enemy => enemy.update());
        this.player.update();
-       this.score = this.add.text(10,470,``);
+       
        this.score.setText('score:' + this.player.score);
    }
 }

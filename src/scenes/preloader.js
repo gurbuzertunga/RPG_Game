@@ -26,7 +26,6 @@ import options_img from '../assets/img/options.png';
 import help_img from '../assets/img/help.png';
 import score_img from '../assets/img/score.png';
 import quit_img from '../assets/img/quit.png';
-import mainScene from './mainScene';
 
 
 export default class Preloader extends Phaser.Scene {
