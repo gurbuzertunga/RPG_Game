@@ -3,7 +3,7 @@ import APIHandler from '../utils/apiHandler.js';
 export default class Leaderboard extends Phaser.Scene {
     constructor() {
         super('leaderboard');
-        this.space = 0;
+    
     }
 
     create() {
@@ -21,10 +21,11 @@ export default class Leaderboard extends Phaser.Scene {
   
       APIHandler.getData(url)
         .then(data => {
-          console.log(data);
+          this.space = 0;
+          
           data.result.sort((a,b) => b.score - a.score).slice(0,10).forEach((userObj, index) => {
             this.add.text(
-              280,
+              150,
               170 + this.space,
               `${index + 1}. ${userObj.user} | ${userObj.score}`,
               {
@@ -33,10 +34,11 @@ export default class Leaderboard extends Phaser.Scene {
               },
             );
             this.space += 30;
+            
           });
         });
 
-        this.submit = this.add.dom(150,100,'button','padding:20px;background-color:gray;','Go Back');
+        this.submit = this.add.dom(240,100,'button','padding:20px;background-color:gray;','Go Back');
        
         this.btn = document.querySelector('button');
         this.btn.addEventListener('click',e => {

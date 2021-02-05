@@ -21,12 +21,15 @@ import ent_sound from '../assets/audio/ent.wav';
 import bandit_sound from '../assets/audio/bandit.wav';
 
 import pickup_sound from '../assets/audio/pickup.wav';
+import background_sound from '../assets/audio/background_music.wav';
+import instructions_pic from '../assets/img/instructions.png'
 import play_img from '../assets/img/play.png';
 import options_img from '../assets/img/options.png';
 import help_img from '../assets/img/help.png';
 import score_img from '../assets/img/score.png';
 import quit_img from '../assets/img/quit.png';
-
+import music_on_img from '../assets/img/music_on.png';
+import music_off_img from '../assets/img/music_off.png';
 
 export default class Preloader extends Phaser.Scene {
     constructor() {
@@ -44,6 +47,9 @@ export default class Preloader extends Phaser.Scene {
         this.load.image('help',help_img);
         this.load.image('score',score_img);
         this.load.image('quit',quit_img);
+        this.load.image('music_on',music_on_img);
+        this.load.image('music_off',music_off_img);
+        this.load.image('instructions',instructions_pic);
         this.load.tilemapTiledJSON('map',map_json);
         this.load.atlas('player',player_pic,player_json);
         this.load.atlas('enemies',enemies_pic,enemies_atlas);
@@ -58,6 +64,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.audio('troll',troll_sound);
         this.load.audio('ent',ent_sound);
         this.load.audio('bandit',bandit_sound);
+        this.load.audio('background',background_sound);
         this.loading = this.add.graphics();
         this.load.on('progress', progress => {
             this.loading.fillStyle(0x0000ff,1);
