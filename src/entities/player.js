@@ -64,7 +64,7 @@ export default class Player extends MatterEntity {
       });
     this.scene.scene.stop('mainScene');
     this.scene.scene.start('titleScene');
-    window.location.reload();
+    window.location.reload(); // temporary solution until I can fix the replayability problem
   }
 
   update() {
