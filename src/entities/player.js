@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import playerPic from '../assets/img/player.png';
 import playerJson from '../assets/img/player_atlas.json';
 import playerAnim from '../assets/img/player_anim.json';
@@ -18,12 +19,12 @@ export default class Player extends MatterEntity {
     this.score = 0;
     localStorage.setItem('score:', JSON.stringify(this.score));
     // Weapon
-    this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 91); // eslint-disable-line
+    this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 91);
     this.spriteWeapon.setScale(0.6);
     this.spriteWeapon.setOrigin(0.15, 0.85);
     this.scene.add.existing(this.spriteWeapon);
 
-    const { Body, Bodies } = Phaser.Physics.Matter.Matter; // eslint-disable-line
+    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
     const playerCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'playerCollider' });
     const playerSensor = Bodies.circle(this.x, this.y, 24, { isSensor: true, label: 'playerSensor' });
     const compoundBody = Body.create({
@@ -70,7 +71,7 @@ export default class Player extends MatterEntity {
   update() {
     if (this.dead) return;
     const speed = 2.5;
-    const playerVelocity = new Phaser.Math.Vector2(); // eslint-disable-line
+    const playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
       playerVelocity.x = -1;
     } else if (this.inputKeys.right.isDown) {

@@ -1,4 +1,6 @@
-export default class Help extends Phaser.Scene { // eslint-disable-line
+import Phaser from 'phaser';
+
+export default class Help extends Phaser.Scene {
   constructor() {
     super('helpScene');
   }

@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 import mapPic from '../assets/img/rpg_nature_tileset.png';
 import mapJson from '../assets/img/map.json';
 
@@ -31,7 +33,7 @@ import quitImg from '../assets/img/quit.png';
 import musicOnImg from '../assets/img/music_on.png';
 import musicOffImg from '../assets/img/music_off.png';
 
-export default class Preloader extends Phaser.Scene { // eslint-disable-line
+export default class Preloader extends Phaser.Scene {
   constructor() {
     super('preloadScene');
   }

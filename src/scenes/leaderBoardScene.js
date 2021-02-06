@@ -1,6 +1,7 @@
+import Phaser from 'phaser';
 import APIHandler from '../utils/apiHandler';
 
-export default class Leaderboard extends Phaser.Scene { // eslint-disable-line
+export default class Leaderboard extends Phaser.Scene {
   constructor() {
     super('leaderboard');
   }

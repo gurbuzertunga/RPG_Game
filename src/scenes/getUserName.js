@@ -1,4 +1,6 @@
-export default class GetUserName extends Phaser.Scene { // eslint-disable-line
+import Phaser from 'phaser';
+
+export default class GetUserName extends Phaser.Scene {
   constructor() {
     super('getUserName');
   }

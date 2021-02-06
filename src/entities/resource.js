@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import resourcePic from '../assets/img/resources.png';
 import resourceJson from '../assets/img/resources_atlas.json';
 import rockSound from '../assets/audio/rock.wav';
@@ -26,7 +27,7 @@ export default class Resource extends MatterEntity {
 
     const yOrigin = resource.properties.find(p => p.name === 'yOrigin').value;
     this.y += this.height * (yOrigin - 0.5);
-    const { Bodies } = Phaser.Physics.Matter.Matter; // eslint-disable-line
+    const { Bodies } = Phaser.Physics.Matter.Matter;
     const circleCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'collider' });
     this.setExistingBody(circleCollider);
     this.setStatic(true);

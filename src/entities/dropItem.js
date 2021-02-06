@@ -1,5 +1,6 @@
+import Phaser from 'phaser';
 
-export default class DropItem extends Phaser.Physics.Matter.Sprite {// eslint-disable-line
+export default class DropItem extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
     const {
       scene, x, y, frame,

@@ -814,7 +814,7 @@
                         {
                          "name":"health",
                          "type":"int",
-                         "value":5
+                         "value":100
                         }],
                  "rotation":0,
                  "type":"",

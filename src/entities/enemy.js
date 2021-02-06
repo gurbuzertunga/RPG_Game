@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import enemiesPic from '../assets/img/enemies.png';
 import enemiesAtlas from '../assets/img/enemies_atlas.json';
 import enemiesAnim from '../assets/img/enemies_anim.json';
@@ -5,7 +6,6 @@ import enemiesAnim from '../assets/img/enemies_anim.json';
 import trollSound from '../assets/audio/troll.wav';
 import entSound from '../assets/audio/ent.wav';
 import banditSound from '../assets/audio/bandit.wav';
-
 
 import MatterEntity from './matterEntity';
 
@@ -26,7 +26,7 @@ export default class Enemy extends MatterEntity {
       scene, x: enemy.x, y: enemy.y, texture: 'enemies', frame: `${enemy.name}_idle_1`, drops, health, name: enemy.name,
     });
 
-    const { Body, Bodies } = Phaser.Physics.Matter.Matter; // eslint-disable-line
+    const { Body, Bodies } = Phaser.Physics.Matter.Matter;
     const enemyCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'enemyCollider' });
     const enemySensor = Bodies.circle(this.x, this.y, 80, { isSensor: true, label: 'enemySensor' });
     const compoundBody = Body.create({
@@ -55,7 +55,7 @@ export default class Enemy extends MatterEntity {
     if (this.attacking) {
       const direction = this.attacking.position.subtract(this.position);
       if (direction.length() > 24) {
-        const v = direction.normalize(); // eslint-disable-line
+        direction.normalize();
         this.setVelocityX(direction.x);
         this.setVelocityY(direction.y);
         if (this.attacktimer) {
