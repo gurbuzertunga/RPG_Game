@@ -52,6 +52,7 @@ export default class Player extends MatterEntity {
     this.setTexture('items', 0);
     this.setOrigin(0.5);
     this.spriteWeapon.destroy();
+
     const username = JSON.parse(localStorage.getItem('username:'));
 
     const obj = {
@@ -63,6 +64,7 @@ export default class Player extends MatterEntity {
       });
     this.scene.scene.stop('mainScene');
     this.scene.scene.start('titleScene');
+    window.location.reload();
   }
 
   update() {
