@@ -3,8 +3,8 @@ import playerJson from '../assets/img/player_atlas.json';
 import playerAnim from '../assets/img/player_anim.json';
 import items from '../assets/img/items.png';
 import playerHit from '../assets/audio/player.wav';
-import MatterEntity from './matterEntity.js'; // eslint-disable-line
-import APIHandler from '../utils/apiHandler.js'; // eslint-disable-line
+import MatterEntity from './matterEntity';
+import APIHandler from '../utils/apiHandler';
 
 export default class Player extends MatterEntity {
   constructor(data) {

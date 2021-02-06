@@ -9,7 +9,7 @@ export default class GetUserName extends Phaser.Scene { // eslint-disable-line
     this.submit = this.add.dom(250, 200, 'button', 'padding:20px;background-color:gray;', 'Submit');
 
     this.btn = document.querySelector('button');
-    this.btn.addEventListener('click', e => { // eslint-disable-line
+    this.btn.addEventListener('click', () => {
       this.inputValue = document.querySelector('input').value;
       if (this.inputValue == null || this.inputValue === '') {
         localStorage.setItem('username:', JSON.stringify('Nameless'));

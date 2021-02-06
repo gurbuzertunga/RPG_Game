@@ -18,7 +18,6 @@ export default class Resource extends MatterEntity {
 
   constructor(data) {
     const { scene, resource } = data;
-    // super(scene.matter.world,resource.x,resource.y,'resources',resource.type);
     const drops = JSON.parse(resource.properties.find(p => p.name === 'drops').value);
     const depth = resource.properties.find(p => p.name === 'depth').value;
     super({

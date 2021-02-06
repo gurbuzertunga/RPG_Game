@@ -1,11 +1,11 @@
 import Phaser from 'phaser';
 import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
-import GetUserName from './scenes/getUserName.js'; // eslint-disable-line
-import Leaderboard from './scenes/leaderBoardScene.js'; // eslint-disable-line
-import mainScene from './scenes/mainScene.js'; // eslint-disable-line
-import Preloader from './scenes/preloader.js'; // eslint-disable-line
-import helpScene from './scenes/help.js'; // eslint-disable-line
-import Title from './scenes/title.js'; // eslint-disable-line
+import GetUserName from './scenes/getUserName';
+import Leaderboard from './scenes/leaderBoardScene';
+import mainScene from './scenes/mainScene';
+import Preloader from './scenes/preloader';
+import helpScene from './scenes/help';
+import Title from './scenes/title';
 
 const config = {
   type: Phaser.AUTO,

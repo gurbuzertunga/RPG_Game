@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
-import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin'; // eslint-disable-line
+
 
 import mapPic from '../assets/img/rpg_nature_tileset.png';
 import mapJson from '../assets/img/map.json';
 
-import Player from '../entities/player.js'; // eslint-disable-line
-import Resource from '../entities/resource.js'; // eslint-disable-line
-import Enemy from '../entities/enemy.js'; // eslint-disable-line
+import Player from '../entities/player';
+import Resource from '../entities/resource';
+import Enemy from '../entities/enemy';
 
 export default class mainScene extends Phaser.Scene {
   constructor() {

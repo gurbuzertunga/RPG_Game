@@ -1,4 +1,4 @@
-import APIHandler from '../src/utils/apiHandler.js'; // eslint-disable-line
+import APIHandler from '../src/utils/apiHandler';
 
 describe('postData', () => {
   test('it does not return null', () => expect(APIHandler.postData()).not.toBeNull());

@@ -7,7 +7,7 @@ import entSound from '../assets/audio/ent.wav';
 import banditSound from '../assets/audio/bandit.wav';
 
 
-import MatterEntity from './matterEntity.js'; // eslint-disable-line
+import MatterEntity from './matterEntity';
 
 export default class Enemy extends MatterEntity {
   static preload(scene) {

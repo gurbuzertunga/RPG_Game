@@ -1,4 +1,4 @@
-import DropItem from './dropItem.js'; // eslint-disable-line
+import DropItem from './dropItem';
 
 export default class MatterEntity extends Phaser.Physics.Matter.Sprite { // eslint-disable-line
   constructor(data) {

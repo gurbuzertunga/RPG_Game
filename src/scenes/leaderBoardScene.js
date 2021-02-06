@@ -1,4 +1,4 @@
-import APIHandler from '../utils/apiHandler.js'; // eslint-disable-line
+import APIHandler from '../utils/apiHandler';
 
 export default class Leaderboard extends Phaser.Scene { // eslint-disable-line
   constructor() {
@@ -36,7 +36,7 @@ export default class Leaderboard extends Phaser.Scene { // eslint-disable-line
     this.submit = this.add.dom(240, 100, 'button', 'padding:20px;background-color:gray;', 'Go Back');
 
     this.btn = document.querySelector('button');
-    this.btn.addEventListener('click', e => { // eslint-disable-line
+    this.btn.addEventListener('click', () => {
       this.scene.start('titleScene');
     });
   }
