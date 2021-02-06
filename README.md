@@ -16,12 +16,16 @@ Here I created an RPG Game Using Webpack, ES6, JS and Phaser. In Phaser as Engin
    
 **Scene-title:**
 
+![Title Screen](/readmeScreenshots/titlescreen.png)
+
 1. User can see three options: Play, Help and Score.
 2. Play Option: Leads to game screen where before user is prompted to enter a username which will be used to list on leaderboard scene.
 3. Help Option: Includes a how to play screen.
 4. Score Option: Has a list of Top Ten players with the highest scores.
 
 **Scene-main:**
+
+![Play Screen](/readmeScreenshots/gamescreen.png)
 
 1. User can see a character/avatar on the screen at this point, which has a weapon(battle axe).
 2. The avatar/character will die if one of the enemies get to hit tha character a certain amont of times(user has 5 health).
