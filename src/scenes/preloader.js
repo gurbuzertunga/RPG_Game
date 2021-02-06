@@ -1,89 +1,86 @@
-import map_pic from '../assets/img/rpg_nature_tileset.png';
-import map_json from '../assets/img/map.json';
+import mapPic from '../assets/img/rpg_nature_tileset.png';
+import mapJson from '../assets/img/map.json';
 
-import player_pic from '../assets/img/player.png';
-import player_json from '../assets/img/player_atlas.json';
-import player_anim from '../assets/img/player_anim.json';
+import playerPic from '../assets/img/player.png';
+import playerJson from '../assets/img/player_atlas.json';
+import playerAnim from '../assets/img/player_anim.json';
 import items from '../assets/img/items.png';
 
-import enemies_pic from '../assets/img/enemies.png';
-import enemies_atlas from '../assets/img/enemies_atlas.json';
-import enemies_anim from '../assets/img/enemies_anim.json';
+import enemiesPic from '../assets/img/enemies.png';
+import enemiesAtlas from '../assets/img/enemies_atlas.json';
+import enemiesAnim from '../assets/img/enemies_anim.json';
 
-import resources_pic from '../assets/img/resources.png';
-import resources_json from '../assets/img/resources_atlas.json';
+import resourcesPic from '../assets/img/resources.png';
+import resourcesJson from '../assets/img/resources_atlas.json';
 
-import rock_sound from '../assets/audio/rock.wav';
-import bush_sound from '../assets/audio/bush.wav';
-import tree_sound from '../assets/audio/tree.wav';
-import troll_sound from '../assets/audio/troll.wav';
-import ent_sound from '../assets/audio/ent.wav';
-import bandit_sound from '../assets/audio/bandit.wav';
+import rockSound from '../assets/audio/rock.wav';
+import bushSound from '../assets/audio/bush.wav';
+import treeSound from '../assets/audio/tree.wav';
+import trollSound from '../assets/audio/troll.wav';
+import entSound from '../assets/audio/ent.wav';
+import banditSound from '../assets/audio/bandit.wav';
 
-import pickup_sound from '../assets/audio/pickup.wav';
-import background_sound from '../assets/audio/background_music.wav';
-import instructions_pic from '../assets/img/instructions.png'
-import play_img from '../assets/img/play.png';
-import options_img from '../assets/img/options.png';
-import help_img from '../assets/img/help.png';
-import score_img from '../assets/img/score.png';
-import quit_img from '../assets/img/quit.png';
-import music_on_img from '../assets/img/music_on.png';
-import music_off_img from '../assets/img/music_off.png';
+import pickupSound from '../assets/audio/pickup.wav';
+import backgroundSound from '../assets/audio/background_music.wav';
+import instructionsPic from '../assets/img/instructions.png';
+import playImg from '../assets/img/play.png';
+import optionsImg from '../assets/img/options.png';
+import helpImg from '../assets/img/help.png';
+import scoreImg from '../assets/img/score.png';
+import quitImg from '../assets/img/quit.png';
+import musicOnImg from '../assets/img/music_on.png';
+import musicOffImg from '../assets/img/music_off.png';
 
-export default class Preloader extends Phaser.Scene {
-    constructor() {
-        super('preloadScene');
-        
-    }
+export default class Preloader extends Phaser.Scene { // eslint-disable-line
+  constructor() {
+    super('preloadScene');
+  }
 
 
-    preload() {
-        let percentage = this.add.text(100,175,``);
-        let fileloading = this.add.text(100,190,``);
-        this.load.image('tiles', map_pic);
-        this.load.image('play',play_img);
-        this.load.image('options',options_img);
-        this.load.image('help',help_img);
-        this.load.image('score',score_img);
-        this.load.image('quit',quit_img);
-        this.load.image('music_on',music_on_img);
-        this.load.image('music_off',music_off_img);
-        this.load.image('instructions',instructions_pic);
-        this.load.tilemapTiledJSON('map',map_json);
-        this.load.atlas('player',player_pic,player_json);
-        this.load.atlas('enemies',enemies_pic,enemies_atlas);
-        this.load.animation('player_anim',player_anim);
-        this.load.animation('enemies_anim',enemies_anim);
-        this.load.spritesheet('items',items,{frameWidth:32,frameHeight:32});
-        this.load.atlas('resources',resources_pic,resources_json);
-        this.load.audio('tree',tree_sound);
-        this.load.audio('bush',bush_sound);
-        this.load.audio('rock',rock_sound);
-        this.load.audio('pickup',pickup_sound);
-        this.load.audio('troll',troll_sound);
-        this.load.audio('ent',ent_sound);
-        this.load.audio('bandit',bandit_sound);
-        this.load.audio('background',background_sound);
-        this.loading = this.add.graphics();
-        this.load.on('progress', progress => {
-            this.loading.fillStyle(0x0000ff,1);
-            this.loading.fillRect(100,150,300 * progress,25);
-            percentage.setText(`${parseInt(progress * 100)}%`);
-            
-        });
-        this.load.on('fileprogress', file => {
-            fileloading.setText(file.key);
-        });
-        this.load.on('complete', () => {
-            percentage.destroy();
-            fileloading.destroy();
-            this.add.text(100,175,'Loading Complete.');
-        });
-    };
+  preload() {
+    const percentage = this.add.text(100, 175, '');
+    const fileloading = this.add.text(100, 190, '');
+    this.load.image('tiles', mapPic);
+    this.load.image('play', playImg);
+    this.load.image('options', optionsImg);
+    this.load.image('help', helpImg);
+    this.load.image('score', scoreImg);
+    this.load.image('quit', quitImg);
+    this.load.image('music_on', musicOnImg);
+    this.load.image('music_off', musicOffImg);
+    this.load.image('instructions', instructionsPic);
+    this.load.tilemapTiledJSON('map', mapJson);
+    this.load.atlas('player', playerPic, playerJson);
+    this.load.atlas('enemies', enemiesPic, enemiesAtlas);
+    this.load.animation('player_anim', playerAnim);
+    this.load.animation('enemies_anim', enemiesAnim);
+    this.load.spritesheet('items', items, { frameWidth: 32, frameHeight: 32 });
+    this.load.atlas('resources', resourcesPic, resourcesJson);
+    this.load.audio('tree', treeSound);
+    this.load.audio('bush', bushSound);
+    this.load.audio('rock', rockSound);
+    this.load.audio('pickup', pickupSound);
+    this.load.audio('troll', trollSound);
+    this.load.audio('ent', entSound);
+    this.load.audio('bandit', banditSound);
+    this.load.audio('background', backgroundSound);
+    this.loading = this.add.graphics();
+    this.load.on('progress', progress => {
+      this.loading.fillStyle(0x0000ff, 1);
+      this.loading.fillRect(100, 150, 300 * progress, 25);
+      percentage.setText(`${parseInt(progress * 100)}%`); // eslint-disable-line
+    });
+    this.load.on('fileprogress', file => {
+      fileloading.setText(file.key);
+    });
+    this.load.on('complete', () => {
+      percentage.destroy();
+      fileloading.destroy();
+      this.add.text(100, 175, 'Loading Complete.');
+    });
+  }
 
-    create() {
-        this.scene.start('titleScene');
-    };
-
+  create() {
+    this.scene.start('titleScene');
+  }
 }
