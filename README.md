@@ -1,16 +1,64 @@
-# Phaser 3 Webpack Project Template
+# Phaser 3 RPG Game
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+Here I created an RPG Game Using Webpack, ES6, JS and Phaser. In Phaser as Engine I used Matterjs.
 
-This has been updated for Phaser 3.50.0 version and above.
+## Live-Demo
 
-Loading images via JavaScript module `import` is also supported, although not recommended.
+[RPG-Game](https://rpg-game-phaser.netlify.app)
 
-## Requirements
+## How to play:
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+**Getting Started**
 
-## Available Commands
+1. one user can either play the game online by clicking [here](https://rpg-game-phaser.netlify.app)
+  **OR**
+   Clone from the git [here](https://github.com/gurbuzertunga/RPG_Game), the process of cloning are 
+   
+**Scene-title:**
+
+1. User can see three options: Play, Help and Score.
+2. Play Option: Leads to game screen where before user is prompted to enter a username which will be used to list on leaderboard scene.
+3. Help Option: Includes a how to play screen.
+4. Score Option: Has a list of Top Ten players with the highest scores.
+
+**Scene-main:**
+
+1. User can see a character/avatar on the screen at this point, which has a weapon(battle axe).
+2. The avatar/character will die if one of the enemies get to hit tha character a certain amont of times(user has 5 health).
+3. There are three different enemy types;
+    Ent: Has 8 health and will drop a random loot,
+    Troll: Has 10 health and will drop a random loot,
+    Bandit: Has 5 health and will drop a random loot,
+4. There are three different resorce types;
+    Tree: will drop logs,
+    Bush: will drop berries,
+    Rock: You can guess what it will drop on this one.
+5. To get a score the avatar/character has to either kill an enemy or collect resources.
+6. The avatar/character can move around with WASD keys and swing it's Might Battle Axe with Left Click on Mouse.
+7. If the avatar/character died , then the Scene Title will reload.
+
+## Video description:
+[Video-explanation](https://www.loom.com/share/1b9c1b0a701542699499e34e66564c18)
+
+## Technologies used
+
+* JavaScript
+* Phaser 3
+* MatterJS Physics Engine
+* Tiled
+* Webpack
+* Eslint
+* Babel
+* Jest in the tests
+* Github
+* [Netlify](https://app.netlify.com/) for the deployment
+* [Leaderboard API service][LB-API] for the leaderboard
+
+## Downloading from git and running in local machine:
+
+**Prerequisites:**
+
+**Available Commands**
 
 | Command | Description |
 |---------|-------------|
@@ -18,32 +66,41 @@ Loading images via JavaScript module `import` is also supported, although not re
 | `npm start` | Build project and open web server running project |
 | `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
 
-## Writing Code
+**To get this project set up on your local machine, follow these simple steps:**
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Copy and paste the following code into the Terminal: git clone https://github.com/gurbuzertunga/RPG_Game.git
+4. Run "npm install".
+5. Run "npm start".
+6. Open, in your browser, 'localhost:8080'.
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
+**For running the test cases:**
+1. Run "npm run test".
 
-## Customizing the Template
+**Now You can start playing and enjoy.**
 
-### Babel
+## Author Details::
 
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+## ✒️  Authors <a name = "author"></a>
 
- ```
-"browsers": [
-  ">0.25%",
-  "not ie 11",
-  "not op_mini all"
-]
- ```
+👤 **Gürbüz Ertunga**
+- Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
+- Twitter: [@dantewuhu](https://twitter.com/dantewuhu)
+- Linkedin: [GurbuzErtunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
 
-### Webpack
+## Show your support
 
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
+Give ⭐ Star me on GitHub — it helps!
 
-## Deploying Code
+## 📝 License
 
-After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
+This project is [MIT](lic.url) licensed.
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
+
+## :clap: Acknowledgements
+
+- [SuperDark for Game Assets](https://superdark.itch.io/enchanted-forest-characters) <br />
+- [Shikashi for Icon Packs](https://cheekyinkling.itch.io/shikashis-fantasy-icons-pack) <br />
+- [Scanndroid for Background Music](https://www.youtube.com/watch?v=MkgR0SxmMKo) <br />
+
