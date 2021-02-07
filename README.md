@@ -6,7 +6,7 @@ Here I created an RPG Game Using Webpack, ES6, JS and Phaser. In Phaser as Engin
 
 The Game is about a lonely knight that fell into an island in which there are some Trolls and Ents. End Game Boss is a bandit with 100 health.(Each hit of your axe takes away only 1 health) If you can actually kill the boss bandit congrats, you have way too much free time on your hands and maybe you should do something better with your life. Try learning coding for example.
 
-Gameplay is Extremely simple. You move around with WASD keys as usual and left click to swing your axe. Try to get as much point as you can, before you die.
+Gameplay is Extremely simple. You move around with WASD(W-Move up,A-Move left,S-Move down,D-Move Right) keys as usual and left click to swing your axe. Try to get as much point as you can, before you die.
 
 Good Luck!
 
