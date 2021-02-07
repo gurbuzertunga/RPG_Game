@@ -14,6 +14,17 @@ Good Luck!
 
 [RPG-Game](https://rpg-game-phaser.netlify.app)
 
+#### Game Design Implementaion
+Most of the design concepts were implemented in this respository. However, some design concepts are still pending and these include:
+- Using a different game character for the second scene to show better health.
+- Character being able to pick animated coins in the second play scene of the game.
+- Stopping the up counter when game is ended.
+- Having a dynamic scoreboard that moves alongside the camera in the second game play scene.
+- More real sprite animations.
+- Animated obstacles in the second game play scene.
+
+#### You can see a detailed Game Design Document [here](https://docs.google.com/document/d/1_ZASoaRodW9ONdF9bFRhUwJ9-UGhDQM425nmVNdIc1g/edit?usp=sharing)
+
 ## How to play:
 
 **Getting Started**
